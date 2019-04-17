@@ -1,3 +1,4 @@
+
 import { Network } from '@ionic-native/network';
 import { NetworkServiceProvider } from './../NetworkServiceProvider';
 import { LoginPage } from './../pages/login/login';
@@ -13,6 +14,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AddDataPage } from '../pages/add-data/add-data';
 import { EditDataPage } from '../pages/edit-data/edit-data';
+import { Geolocation } from '@ionic-native/geolocation'
 
 
 @NgModule({
@@ -35,15 +37,18 @@ import { EditDataPage } from '../pages/edit-data/edit-data';
     EditDataPage, LoginPage
   ],
   providers: [
-
+    NetworkServiceProvider,
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     SQLite,
     Toast,
-    
-  
-    
+    Network,
+    Geolocation,
+
+
+
   ]
 })
 export class AppModule { }
+
